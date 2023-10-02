@@ -10,7 +10,7 @@ class binarysearch
 		int n=sc.nextInt();
 		int[] A = new int[n];
 		System.out.print("Enter the elements:");
-		for(int i=0;i<30;i++)
+		for(int i=0;i<n;i++)
 				A[i] = sc.nextInt();
 		System.out.print("Enter the item to be searched:");
 		int item = sc.nextInt();	
@@ -24,17 +24,17 @@ class binarysearch
 
 	int Binaryser(int A[], int n, int item)
 	{
-		int beg=2,end=n-1,mid;
+		int beg=0,end=n-1,mid;
 		while(beg<=end)
 		{
-			mid=(beg+end)/2;
+			mid=beg+(end-beg)/2;
 			if(A[mid]==item)
 			{
-				return(mid-1);
+				return(mid);
 			}
 			else if(item>A[mid])
 			{
-				beg=mid-1;
+				beg=mid+1;
 			}
 			else
 			{
